@@ -10,8 +10,6 @@ name: Ruby
 on:
   push:
     branches: [ dev ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   test:
@@ -37,3 +35,14 @@ jobs:
         bundle install --jobs 4 --retry 3
     - name: Run tests
       run: bundle exec rake
+    - name: Publish to Heroku
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: AkhileshNS/heroku-deploy@v3.8.8
+      with:
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        heroku_email: danielanoon@outlook.com
+        heroku_app_name: wehedge
+        branch: dev
+        appdir: server
