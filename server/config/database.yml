@@ -5,21 +5,25 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  username: root
+  # YOU NEED TO ADD A PASSWORD
+  password: 
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: test
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: db/test.sqlite3
+# test:
+#   <<: *default
+#   database: db/test.sqlite3
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: mysql://qwv88ojv8pvrxlk6:ly30116sgtdqvfny@cis9cbtgerlk68wl.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/jr3exslhwzd3ibjj
