@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+
   def index
     # TODO: send back all the groups that can be seen
     respond_to do |format|

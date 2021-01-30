@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'members/index'
-  get 'members/create'
-  get 'members/destroy'
+  get 'tags/index', to: 'tags#all_index'
+
   resources :groups, only: %i[index show create] do
     resources :members, only: %i[index create destroy]
+    resources :tags, only: %i[index create destroy]
+    resources :picks, only: %i[index show create destroy] do
+      resources :votes, only: %i[index create destroy]
+    end
   end
-  # get 'groups/index'
-  # get 'groups/create'
-  # get 'groups/show'
+
   post 'users/new'
   post 'users/login'
 
-  # get all tags
-  get 'tags/index'
 end
