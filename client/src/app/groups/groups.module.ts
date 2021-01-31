@@ -7,15 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { GroupsPageRoutingModule } from './groups-routing.module';
 
 import { GroupsPage } from './groups.page';
-import { GroupComponent } from "../components/group/group.component";
+import { ComponentsModule } from "../components/components.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GroupsPageRoutingModule
+    GroupsPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [GroupsPage, GroupComponent]
+  declarations: [GroupsPage]
 })
 export class GroupsPageModule {}
