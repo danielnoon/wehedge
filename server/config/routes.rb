@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'tags/index', to: 'tags#all_index'
 
-  resources :groups, only: %i[index show create] do
+  resources :groups, only: %i[create index show] do
     resources :members, only: %i[index create destroy]
     resources :tags, only: %i[index create destroy]
     resources :picks, only: %i[index show create destroy] do
