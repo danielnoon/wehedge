@@ -24,7 +24,7 @@ We love democracy.
 ## The Purpose
 Developed with Ruby on Rails for [CornHacks 2021](https://cornhacks.com/) by:
 * Daniel Noon ([@danielnoon](https://github.com/danielnoon)) 
-* Ben Lohrman ([@bwlohrman](https://github.com/bwlohrman))
+* Ben Lohrman ([@blohrman](https://github.com/blohrman))
 * Liam Seper ([@lseper](https://github.com/lseper))
 * Andrew Herold ([@heroldev](https://github.com/heroldev))
 
