@@ -15,6 +15,24 @@ const routes: Routes = [
     pathMatch: 'full',
     canActivate: [RootGuard]
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'groups',
+    loadChildren: () => import('./groups/groups.module').then( m => m.GroupsPageModule)
+  },
+  {
+    path: 'groups/:id',
+    loadChildren: () => import('./group-details/group-details.module').then( m => m.GroupDetailsPageModule)
+  },
+
+
 ];
 
 @NgModule({

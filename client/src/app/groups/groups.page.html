@@ -1,0 +1,12 @@
+<ion-content>
+  <div class="wrapper">
+    <div class="header">
+      <img src="/assets/logo/icon_horizontal.svg" width="50" class="logo" />
+      <h1 class="heading">Find a Group</h1>
+      <ion-searchbar></ion-searchbar>
+    </div>
+    <div class="content">
+      <app-group *ngFor="let group of groups" [group]="group"></app-group>
+    </div>
+  </div>
+</ion-content>

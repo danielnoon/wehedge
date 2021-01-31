@@ -1,0 +1,21 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{group.name}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="description">
+      <p>
+        {{group.description}}
+      </p>
+    </div>
+    <div class="tags">
+      <ion-chip *ngFor="let tag of group.tags"> #{{tag}} </ion-chip>
+    </div>
+    <ion-buttons>
+      <ion-button class="details-button">
+        View Details
+        <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-card-content>
+</ion-card>
