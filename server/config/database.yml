@@ -5,17 +5,17 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: root
+  username: postgres
+  host: localhost
   # YOU NEED TO ADD A PASSWORD
-  password: 
-  socket: /tmp/mysql.sock
+  password:
 
 development:
   <<: *default
-  database: test
+  database: postgres
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,5 +24,6 @@ development:
 #   <<: *default
 #   database: db/test.sqlite3
 
-# production:
-#   <<: *default
+production:
+   <<: *default
+   database: <%= ENV.fetch("DATABASE_URL") %>
