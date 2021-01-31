@@ -1,0 +1,19 @@
+name: Heroku Deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  heroku:
+    runs-on: ubuntu-latest
+    name: Publish to Heroku
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: AkhileshNS/heroku-deploy@v3.8.8
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_email: danielanoon@outlook.com
+          heroku_app_name: wehedge
+          branch: main
+          appdir: server
