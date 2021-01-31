@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_31_101434) do
+ActiveRecord::Schema.define(version: 2021_01_31_111105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
@@ -47,12 +47,12 @@ ActiveRecord::Schema.define(version: 2021_01_31_101434) do
   end
 
   create_table "picks", force: :cascade do |t|
-    t.bigint "users_id", null: false
-    t.bigint "groups_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["groups_id"], name: "index_picks_on_groups_id"
-    t.index ["users_id"], name: "index_picks_on_users_id"
+    t.index ["group_id"], name: "index_picks_on_group_id"
+    t.index ["user_id"], name: "index_picks_on_user_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -83,8 +83,8 @@ ActiveRecord::Schema.define(version: 2021_01_31_101434) do
   end
 
   add_foreign_key "pick_stocks", "picks"
-  add_foreign_key "picks", "groups", column: "groups_id"
-  add_foreign_key "picks", "users", column: "users_id"
+  add_foreign_key "picks", "groups"
+  add_foreign_key "picks", "users"
   add_foreign_key "votes", "picks"
   add_foreign_key "votes", "users"
 end
