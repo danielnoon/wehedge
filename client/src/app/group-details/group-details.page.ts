@@ -31,7 +31,6 @@ export class GroupDetailsPage implements OnInit, OnDestroy {
       this.api
         .getGroupById(this.id)
         .then(g => this.group = g)
-        .then(g => )
     });
   }
 
