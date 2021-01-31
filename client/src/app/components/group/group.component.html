@@ -12,7 +12,7 @@
       <ion-chip *ngFor="let tag of group.tags"> #{{tag}} </ion-chip>
     </div>
     <ion-buttons>
-      <ion-button class="details-button">
+      <ion-button class="details-button" routerLink="/groups/{{group.id}}" router-direction="forward">
         View Details
         <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
       </ion-button>

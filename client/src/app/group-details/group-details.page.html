@@ -1,8 +1,24 @@
 <ion-content>
   <div *ngIf="group">
-
+    <main>
+      <div class="navigation">
+        <ion-buttons>
+          <ion-button class="button-back">
+            <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+      <div class="title">
+        <h1>{{group.name}}</h1>
+      </div>
+      <div class="details">
+        <p class="description">
+          {{group.description}}
+        </p>
+      </div>
+    </main>
   </div>
-  <div *ngIf="!group">
+  <div *ngIf="!group" class="spinner-center">
     <ion-spinner></ion-spinner>
   </div>
 </ion-content>
