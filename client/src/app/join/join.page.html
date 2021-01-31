@@ -1,0 +1,38 @@
+<ion-content>
+  <ion-buttons slot="fixed" class="cancel-button">
+    <ion-button router-direction="back" routerLink="..">
+      Go back
+      <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-slides *ngIf="group" class="slides" [pager]="true">
+    <ion-slide>
+      <h1 class="intro-statement">You're about to join</h1>
+      <h2 class="intro-group-name">{{group.name}}</h2>
+    </ion-slide>
+    <ion-slide>
+      <h2>This means you'll be committing some of your <strong>real money</strong> to investing with the will of the group.</h2>
+    </ion-slide>
+    <ion-slide>
+      <h2>You will only be able to withdraw your investment <strong>between group investment periods</strong>.</h2>
+    </ion-slide>
+    <ion-slide>
+      <h2>By selecting a contribution amount, you agree that you understand the risks involved.</h2>
+    </ion-slide>
+    <ion-slide class="final">
+      <h1 class="ready">Ready?</h1>
+      <ion-item color="secondary" class="contrib-item">
+        <ion-label>$</ion-label>
+        <ion-input type="number" [(ngModel)]="contribAmount" placeholder="Contribution Amount"></ion-input>
+      </ion-item>
+      <ion-button size="large" color="success" class="submit-button" (click)="submitContribution()">
+        Submit
+        <ion-icon name="checkmark-outline" slot="end"></ion-icon>
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="animation">
+    <div class="circle"></div>
+  </div>
+</ion-content>

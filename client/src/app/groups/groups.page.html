@@ -6,6 +6,9 @@
       <ion-searchbar></ion-searchbar>
     </div>
     <div class="content">
+      <div class="loading" *ngIf="groups.length === 0">
+        <ion-spinner></ion-spinner>
+      </div>
       <app-group *ngFor="let group of groups" [group]="group"></app-group>
     </div>
   </div>
