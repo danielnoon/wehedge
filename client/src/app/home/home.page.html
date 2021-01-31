@@ -1,20 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="wrapper">
+    <div class="header">
+      <app-header></app-header>
+      <h1 class="heading">Hello, Daniel!</h1>
+    </div>
+    <div class="content">
+      <section>
+        <ion-card>
+          <ion-card-content class="summary-content">
+            <div class="number">
+              <h2 class="smol-header">Net Gain (Loss)</h2>
+              <div class="big-number" [class.gain]="true">
+                +$1,250.93
+              </div>
+            </div>
+            <div class="number">
+              <h2 class="smol-header">Funds</h2>
+              <div class="big-number">
+                $2,322.00
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </section>
+      <section>
+        <ion-card>
+          <ion-item button routerLink="/groups">
+            <ion-icon name="enter-outline" slot="end"></ion-icon>
+            Join Groups
+          </ion-item>
+          <ion-item button>
+            <ion-icon name="add-circle-outline" slot="end"></ion-icon>
+            Create Group
+          </ion-item>
+        </ion-card>
+      </section>
+<!--      <div class="loading">-->
+<!--        <ion-spinner></ion-spinner>-->
+<!--      </div>-->
+    </div>
   </div>
 </ion-content>
