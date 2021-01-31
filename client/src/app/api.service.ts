@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Group } from "../models/group";
 import { resolveIn } from "../util/resolveIn";
+import { Tag } from "../models/tag";
 
 interface RequestOptions {
   resource: string;
@@ -25,6 +26,17 @@ const demoGroups: Group[] = [
     tags: ["TECH", "STABLE"],
     description: "We're a group of investors interested in buying shares of technology firms large and small. Join us!",
     memberCount: 26
+  }
+];
+
+const demoTags: Tag[] = [
+  {
+    name: "YOLO",
+    id: 0
+  },
+  {
+    name: "STABLE",
+    id: 1
   }
 ];
 
@@ -60,7 +72,14 @@ export class ApiService {
     }
   }
 
-  async getGroups(): Promise<Group[]> {
+  async getGroups(filters?: {
+    tags?: number[],
+    query?: string
+  }): Promise<Group[]> {
+    const { tags, query } = filters ?? {};
+    if (tags || query) {
+      console.log(filters);
+    }
     return await resolveIn<Group[]>(demoGroups, 1000);
   }
 
@@ -70,5 +89,19 @@ export class ApiService {
 
   async addGroupMember(memberId: number, groupId: number, contribution: number): Promise<void> {
     return await resolveIn(null, 1000);
+  }
+
+  async getAllTags() {
+    return await resolveIn(demoTags, 1000);
+  }
+
+  async createGroup(params: {
+    name: string,
+    tags: number[],
+    description: string,
+    private: boolean
+  }) {
+    console.log(params);
+    return await resolveIn(1, 1000);
   }
 }

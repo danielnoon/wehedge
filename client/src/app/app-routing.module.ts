@@ -28,6 +28,11 @@ const routes: Routes = [
     loadChildren: () => import('./groups/groups.module').then( m => m.GroupsPageModule)
   },
   {
+    path: 'groups/new',
+    loadChildren: () => import('./create-group/create-group.module').then( m => m.CreateGroupPageModule),
+    pathMatch: 'full'
+  },
+  {
     path: 'groups/:id',
     loadChildren: () => import('./group-details/group-details.module').then( m => m.GroupDetailsPageModule)
   },
@@ -35,6 +40,7 @@ const routes: Routes = [
     path: 'groups/:id/join',
     loadChildren: () => import('./join/join.module').then( m => m.JoinPageModule)
   },
+
 
 
 

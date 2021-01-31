@@ -37,3 +37,17 @@
     }
   }
 }
+
+.big-btn-wrapper {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  height: min-content;
+  padding-bottom: 60px;
+  width: 100%;
+
+  .big-btn {
+    margin: auto;
+    --border-radius: 100px;
+  }
+}
