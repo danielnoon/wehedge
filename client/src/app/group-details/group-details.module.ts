@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { GroupDetailsPageRoutingModule } from './group-details-routing.module';
 
 import { GroupDetailsPage } from './group-details.page';
+import { ComponentsModule } from "../components/components.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GroupDetailsPageRoutingModule
+    GroupDetailsPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [GroupDetailsPage]
 })

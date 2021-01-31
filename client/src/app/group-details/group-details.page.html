@@ -1,15 +1,21 @@
 <ion-content>
   <div *ngIf="group">
     <main>
+      <div class="header">
+        <app-header></app-header>
+      </div>
       <div class="navigation">
         <ion-buttons>
-          <ion-button class="button-back">
+          <ion-button class="button-back" routerLink="/groups" router-direction="backward">
             <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
       </div>
       <div class="title">
         <h1>{{group.name}}</h1>
+      </div>
+      <div class="tags">
+        <ion-chip *ngFor="let tag of group.tags">#{{tag}} </ion-chip>
       </div>
       <div class="details">
         <p class="description">

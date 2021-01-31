@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_31_034129) do
+ActiveRecord::Schema.define(version: 2021_01_31_041717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 2021_01_31_034129) do
     t.integer "total_invested"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "groups_tags", id: false, force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "tag_id", null: false
   end
 
   create_table "groups_users", id: false, force: :cascade do |t|
@@ -46,6 +51,12 @@ ActiveRecord::Schema.define(version: 2021_01_31_034129) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["groups_id"], name: "index_picks_on_groups_id"
     t.index ["users_id"], name: "index_picks_on_users_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
