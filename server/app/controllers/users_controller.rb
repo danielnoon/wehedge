@@ -2,9 +2,20 @@ class UsersController < ApplicationController
   # registering new users (POST)
   def new
     # TODO: update DB with POST Data from
-    respond_to do |format|
-          format.json { render json: { status: 'register success' } }
-        end
+
+    @username_exists = User.where("users.username = '#{params[:username]}'")
+
+    if @username_exists != []
+      respond_to do |format|
+        format.json { render json: { status: 'username already exists' } }
+      end
+    else
+      User.create(username: params[:username], password: params[:password], firstname: params[:first_name], lastname: params[:last_name], wallet: 0, join_date: Time.now)
+      respond_to do |format|
+        format.json { render json: { status: 'register success' } }
+      end
+    end
+        
   end
 
   # logging in to an existing user (POST)
@@ -20,6 +31,6 @@ class UsersController < ApplicationController
         end
       end
     end
-    
+
   end
 end

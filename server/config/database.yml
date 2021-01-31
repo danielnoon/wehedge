@@ -18,7 +18,7 @@ development:
   username: postgres
   host: localhost
   # YOU NEED TO ADD A PASSWORD
-  password: 
+  password: thisismypostgrespassword!
   database: postgres
 
 # # Warning: The database defined as "test" will be erased and
