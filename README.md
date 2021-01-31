@@ -1,4 +1,4 @@
-![WeHedge Primary Logo](/client/assets/logo/wehedge_black_png.png)
+![WeHedge Primary Logo](/client/src/assets/logo/wehedge_black_png.png)
 
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/danielnoon/wehedge/Development%20CI/dev?label=development%20build)
 
