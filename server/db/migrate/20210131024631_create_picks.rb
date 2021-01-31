@@ -7,4 +7,8 @@ class CreatePicks < ActiveRecord::Migration[6.0]
       t.timestamps
     end
   end
+
+  def down
+    drop_table :picks
+  end
 end
