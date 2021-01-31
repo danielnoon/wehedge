@@ -22,3 +22,5 @@ jobs:
           ruby-version: '2.7.2'
       - run: cd server && bundle install
       - run: cd server && ruby bin/rails db:migrate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
