@@ -1,13 +1,14 @@
 class TagsController < ApplicationController
   def all_index
-    # TODO: get every single tag, select all from tags table in db, send back tag associated with id, array of objects { name: id }
+    @tags = Tag.all
     respond_to do |format|
-      format.json { render json: { tag: "all tags in application test" } }
+      format.json { render json: @tags.to_json(only: %i[id name]) }
     end
   end
 
   def index
     # TODO: get all tags that belong to the given group
+    @tags =
     respond_to do |format|
       format.json { render json: { tag: "all tags for group test" } }
     end
