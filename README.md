@@ -19,9 +19,9 @@ Users have the option to join as many groups as they wish, and release a chosen 
 ## The Purpose
 Developed in Ruby for [Cornhacks 2021](https://cornhacks.com/) by:
 * Daniel Noon ([@daitarou](https://github.com/daitarou)) 
-* Ben Lohrman ([@bwlohrman](github.com/bwlohrman))
+* Ben Lohrman ([@bwlohrman](https://github.com/bwlohrman))
 * Liam Seper ([@lseper](https://github.com/lseper))
-* Andrew Herold ([@heroldev](heroldev.net))
+* Andrew Herold ([@heroldev](https://heroldev.net))
 
 # [WeHedge](https://wehedge.app). Take your money further.
 
