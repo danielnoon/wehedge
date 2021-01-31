@@ -153,7 +153,11 @@
       <option name="presentableId" value="Default" />
       <updated>1612029621965</updated>
       <workItem from="1612029623009" duration="301000" />
+<<<<<<< Updated upstream
       <workItem from="1612030022552" duration="45694000" />
+=======
+      <workItem from="1612030022552" duration="25938000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -254,10 +258,17 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2471" y="255" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612034395525" />
+<<<<<<< Updated upstream
     <state x="1052" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1612084835017">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1052" y="226" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1612084835017" />
+=======
+    <state x="1052" y="226" width="672" height="678" key="search.everywhere.popup" timestamp="1612062795984">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1052" y="226" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1612062795984" />
+>>>>>>> Stashed changes
     <state x="2542" y="235" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612030397310" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
