@@ -11,6 +11,7 @@ import { Group } from "../../models/group";
 export class GroupDetailsPage implements OnInit, OnDestroy {
   id = -1;
   group: Group;
+  member = false;
   private paramSub: Subscription;
 
   constructor(private route: ActivatedRoute) { }
@@ -19,14 +20,14 @@ export class GroupDetailsPage implements OnInit, OnDestroy {
     this.paramSub = this.route.params.subscribe(params => {
       this.id = parseInt(params.id, 10);
 
-      // setTimeout(() => {
-      //   this.group = {
-      //     id: 0,
-      //     name: "WallStreetBets",
-      //     tags: ["YOLO", "FUCK ME"],
-      //     description: "yoooooooo diamond hands 💎👐 diamond hands hold hold hold woooooo"
-      //   };
-      // }, 3000);
+      setTimeout(() => {
+        this.group = {
+          id: 0,
+          name: "WallStreetBets",
+          tags: ["YOLO", "FUCK ME"],
+          description: "yoooooooo diamond hands 💎👐 diamond hands hold hold hold woooooo"
+        };
+      }, 500);
     });
   }
 

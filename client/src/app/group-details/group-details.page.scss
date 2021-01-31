@@ -1,0 +1,20 @@
+.spinner-center {
+  height: 100%;
+  display: flex;
+
+  ion-spinner {
+    margin: auto;
+    display: block;
+  }
+}
+
+main {
+  max-width: calc(100% - 20px);
+  margin: auto;
+  width: 1000px;
+  padding-top: 4rem;
+
+  h1 {
+    font-size: 3rem;
+  }
+}

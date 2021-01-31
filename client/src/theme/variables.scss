@@ -3,6 +3,9 @@
 
 /** Ionic CSS Variables **/
 :root {
+  --show-dark-behavior: none;
+  --show-light-behavior: initial;
+
   --ion-color-primary: #7a128f;
   --ion-color-primary-rgb: 122,18,143;
   --ion-color-primary-contrast: #ffffff;
@@ -74,6 +77,9 @@
    */
 
   body {
+    --show-dark-behavior: initial;
+    --show-light-behavior: none;
+
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
@@ -220,4 +226,12 @@
 
     --ion-card-background: #1e1e1e;
   }
+}
+
+.show-dark {
+  display: var(--show-dark-behavior) !important;
+}
+
+.show-light {
+  display: var(--show-light-behavior) !important;
 }
