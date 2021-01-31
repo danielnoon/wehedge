@@ -23,13 +23,11 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
-#     - name: Ruby gem cache
-#       uses: actions/cache@v1
-#       with:
-#         path: 
     - name: Install gems
       run: |
         cd server
         bundle install --jobs 4 --retry 3
-    - name: Run tests
-      run:  bundle exec rake
+    # - name: Run tests
+    #   run: |
+    #     cd server
+    #     bundle exec rake
