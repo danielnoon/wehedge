@@ -7,10 +7,9 @@ class TagsController < ApplicationController
   end
 
   def index
-    # TODO: get all tags that belong to the given group
-    @tags =
+    @tags = Group.find(params[:group_id]).tags
     respond_to do |format|
-      format.json { render json: { tag: "all tags for group test" } }
+      format.json { render json: @tags.to_json(only: %i[id name]) }
     end
   end
 
