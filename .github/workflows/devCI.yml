@@ -26,7 +26,7 @@ jobs:
     - name: Ruby gem cache
     - uses: actions/cache@v1
     - name: Install gems
-    - run: |
+      run: |
         bundle config path server/bin/bundle
         bundle install --jobs 4 --retry 3
     - name: Run tests
