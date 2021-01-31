@@ -20,4 +20,4 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.7.2'
-      - run: server/bin/rails db:migrate
+      - run: ruby server/bin/rails db:migrate
