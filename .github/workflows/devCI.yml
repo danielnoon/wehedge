@@ -29,7 +29,7 @@ jobs:
 #         path: 
     - name: Install gems
       run: |
-        BUNDLE_GEMFILE="server/Gemfile"
+        cd server
         bundle install --jobs 4 --retry 3
     - name: Run tests
       run:  bundle exec rake
