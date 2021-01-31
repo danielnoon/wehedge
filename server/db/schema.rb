@@ -10,11 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_31_010051) do
+ActiveRecord::Schema.define(version: 2021_01_31_032721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "total_money"
+    t.integer "total_invested"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "groups_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.integer "contribution"
+  end
+
+  create_table "picks", force: :cascade do |t|
+    t.bigint "users_id", null: false
+    t.bigint "groups_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["groups_id"], name: "index_picks_on_groups_id"
+    t.index ["users_id"], name: "index_picks_on_users_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -27,4 +51,6 @@ ActiveRecord::Schema.define(version: 2021_01_31_010051) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "picks", "groups", column: "groups_id"
+  add_foreign_key "picks", "users", column: "users_id"
 end
