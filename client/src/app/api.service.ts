@@ -67,4 +67,8 @@ export class ApiService {
   async getGroupById(id: number) {
     return await resolveIn(demoGroups.find(g => g.id === id), 1000);
   }
+
+  async addGroupMember(memberId: number, groupId: number, contribution: number): Promise<void> {
+    return await resolveIn(null, 1000);
+  }
 }

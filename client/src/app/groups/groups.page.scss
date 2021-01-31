@@ -14,4 +14,14 @@
     --background: var(--ion-color-light-shade);
     --icon-color: var(--ion-color-dark)
   }
+
+  .loading {
+    height: 200px;
+    display: flex;
+
+    ion-spinner {
+      display: block;
+      margin: auto;
+    }
+  }
 }
