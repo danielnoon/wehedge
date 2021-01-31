@@ -1,0 +1,2 @@
+class PickStocks < ApplicationRecord
+end

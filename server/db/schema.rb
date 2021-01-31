@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_31_041717) do
+ActiveRecord::Schema.define(version: 2021_01_31_060645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "adminpack"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_01_31_041717) do
     t.bigint "pick_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "api_id"
     t.index ["pick_id"], name: "index_pick_stocks_on_pick_id"
   end
 
