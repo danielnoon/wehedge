@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authorized, only: [:auto_login]
-
   # registering new users (POST)
   def new
     # TODO: update DB with POST Data from
@@ -12,16 +10,9 @@ class UsersController < ApplicationController
         format.json { render json: { status: 'username already exists' } }
       end
     else
-      @user = User.create(username: params[:username], password: params[:password], firstname: params[:first_name], lastname: params[:last_name], wallet: 0, join_date: Time.now)
-      if @user.valid?
-        token = encode_token({user_id: @user.id})
-        respond_to do |format|
-          format.json { render json: { user: @user, token: token } }
-        end
-      else
-        respond_to do |format|
-          format.json { render json: { status: 'register failed, invalid user and pass' } }
-        end
+      User.create(username: params[:username], password: params[:password], firstname: params[:first_name], lastname: params[:last_name], wallet: 0, join_date: Time.now)
+      respond_to do |format|
+        format.json { render json: { status: 'register success' } }
       end
     end
         
@@ -33,17 +24,13 @@ class UsersController < ApplicationController
 
     @user = User.where(username: params[:username])
 
-    if @user && @user.authenticate(params[:password])
-      token = encode_token({ user_id: @user.id })
-      respond_to do |format|
-        format.json { render json: { user: user, token: token } }
+    if @user
+      if User.where(username: params[:username], password: params[:password])
+        respond_to do |format|
+          format.json { render json: { user_id: @user[:id] } }
+        end
       end
     end
+
   end
-
-    private
-
-    def user_params
-      params.permit(:username, :password)
-    end
 end
