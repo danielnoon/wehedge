@@ -22,11 +22,11 @@ In essence, WeHedge is the first of its kind in democratic portfolio management.
 We love democracy.
 
 ## The Purpose
-Developed with Ruby on Rails for [Cornhacks 2021](https://cornhacks.com/) by:
+Developed with Ruby on Rails for [CornHacks 2021](https://cornhacks.com/) by:
 * Daniel Noon ([@danielnoon](https://github.com/danielnoon)) 
 * Ben Lohrman ([@bwlohrman](https://github.com/bwlohrman))
 * Liam Seper ([@lseper](https://github.com/lseper))
-* Andrew Herold ([@heroldev](https://heroldev.net))
+* Andrew Herold ([@heroldev](https://github.com/heroldev))
 
 ## Disclaimer
 This project is nothing more than a Minimum Viable Product (MVP). Should we wish to develop this further, we would not plan a release until we have obtained the proper regulatory approval and necessary certifications for rollout.
