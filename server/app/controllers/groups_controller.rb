@@ -2,14 +2,12 @@ class GroupsController < ApplicationController
 
   def index
     # TODO: send back all the groups that can be seen
+    # if params[:tags]
+    #
+    # end
+    @groups = Group.all
     respond_to do |format|
-      format.json { 
-        render json: { status: 'all groups GET success',
-                       groups: [
-                         { name: 'Group 1', id: 1 },
-                         { name: 'Group 2', id: 2 }
-                       ]}
-                  }
+      format.json { render json: @groups.as_json(include: :tags) }
     end
   end
 
