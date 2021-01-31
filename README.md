@@ -10,7 +10,7 @@ Recently, the stock market has shown unprecedented levels of volatility created 
 
 Because of events like this, retail investors have both gained and losts thousands of dollars due to events of market manipulation and illegal speculation by large banks, investment firms, and market makers.
 
-That's where [**WeHedge**](wehedge.app) comes in.
+That's where [**WeHedge**](https://wehedge.app) comes in.
 
 WeHedge is an app designed to turn you and others (could be your friends, could be randos on the internet) into an investment bloc. Your investments could potentially have meaning and adjust the market in your favor.
 
@@ -23,5 +23,5 @@ Developed in Ruby for [Cornhacks 2021](https://cornhacks.com/) by:
 * Liam Seper ([@lseper](https://github.com/lseper))
 * Andrew Herold ([@heroldev](heroldev.net))
 
-# [WeHedge](wehedge.app). Take your money further.
+# [WeHedge](https://wehedge.app). Take your money further.
 
