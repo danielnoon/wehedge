@@ -9,7 +9,7 @@
       </p>
     </div>
     <div class="tags">
-      <ion-chip *ngFor="let tag of group.tags">#{{tag}}</ion-chip>
+      <ion-chip *ngFor="let tag of group.tags">#{{tag.name}}</ion-chip>
     </div>
     <ion-buttons>
       <ion-button class="details-button" routerLink="/groups/{{group.id}}" color="primary">

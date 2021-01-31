@@ -16,7 +16,6 @@ export class GroupDetailsPage implements OnInit, OnDestroy {
   group: Group;
   member = false;
   private paramSub: Subscription;
-  private fragmentSub: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,7 +29,7 @@ export class GroupDetailsPage implements OnInit, OnDestroy {
       this.id = parseInt(params.id, 10);
       this.api
         .getGroupById(this.id)
-        .then(g => this.group = g)
+        .then(g => this.group = g);
     });
   }
 
@@ -41,6 +40,5 @@ export class GroupDetailsPage implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.paramSub.unsubscribe();
-    this.fragmentSub.unsubscribe();
   }
 }

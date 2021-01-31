@@ -16,7 +16,6 @@ export class SparklineComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit() {
-    console.log(this.svg);
     sparkline(this.svg.nativeElement as SVGSVGElement, (new Array(15)).fill(0).map(() => Math.floor(Math.random() * 10)));
   }
 }
