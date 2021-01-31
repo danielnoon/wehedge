@@ -1,0 +1,22 @@
+.wrapper {
+  max-width: calc(100% - 20px);
+  width: 800px;
+  margin: auto;
+  padding-top: 60px;
+
+  .logo {
+    margin: 10px auto 40px;
+    display: block;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 1em auto;
+  }
+
+  ion-searchbar {
+    --border-radius: 100px;
+    --background: var(--ion-color-light-shade);
+    --icon-color: var(--ion-color-dark)
+  }
+}
