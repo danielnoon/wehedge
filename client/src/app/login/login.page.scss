@@ -1,0 +1,28 @@
+form {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+
+  h1 {
+    text-align: center;
+    margin: 1em auto;
+  }
+}
+
+.column {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: min(100%, 600px);
+  justify-content: center;
+}
+
+.help-wrapper {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: row-reverse;
+}

@@ -1,6 +1,8 @@
 class PicksController < ApplicationController
 
   def index
+    # get the pick information
+    @picks = Pick.joins(:pick_stocks)
     # TODO: get all picks for a group
 
     @picks = PickStocks.find_by_sql("select users.*, picks.*, pick_stocks.* from users join picks on users.id = picks.user_id join groups on groups.id = picks.group_id join pick_stocks on picks.id = pick_stocks.pick_id where groups.id = #{params[:group_id]}")
@@ -32,9 +34,16 @@ class PicksController < ApplicationController
   end
 
   def create
-    # TODO: create a new pick in the DB and relate it to this group
+    @pick = Pick.new(user_id: params[:user], group_id: params[:group])
+    if @pick.save!
+      params[:stocks].each do |stock|
+        @pickstock = PickStock.new(shares: stock[:amount], pick_id: @pick.id, api_id: nil,
+                             category: stock[:type], symbol: stock[:symbol])
+        @pickstock.save!
+      end
+    end
     respond_to do |format|
-      format.json { render json: { tag: "new pick for group created test" } }
+      format.json { render json: { id: @pick.id } }
     end
   end
 

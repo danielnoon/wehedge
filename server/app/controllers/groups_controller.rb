@@ -36,8 +36,11 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:id])
+    g_JSON = @group.as_json(only: %i[id name description total_money total_invested])
+    g_JSON.store(:tags, @group.tags.as_json(only: %i[id name]))
     respond_to do |format|
-      format.json { render json: Group.find(params[:id]).as_json(only: %i[id name description total_money total_invested]) }
+      format.json { render json: g_JSON }
     end
   end
 

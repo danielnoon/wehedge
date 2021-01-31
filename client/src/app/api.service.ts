@@ -12,34 +12,6 @@ interface RequestOptions {
   };
 }
 
-const demoGroups: Group[] = [
-  {
-    id: 0,
-    name: "WallStreetBets",
-    tags: ["YOLO", "FUCK ME"],
-    description: "yoooooooo diamond hands 💎👐 diamond hands hold hold hold woooooo",
-    memberCount: 500
-  },
-  {
-    id: 1,
-    name: "Tech",
-    tags: ["TECH", "STABLE"],
-    description: "We're a group of investors interested in buying shares of technology firms large and small. Join us!",
-    memberCount: 26
-  }
-];
-
-const demoTags: Tag[] = [
-  {
-    name: "YOLO",
-    id: 0
-  },
-  {
-    name: "STABLE",
-    id: 1
-  }
-];
-
 @Injectable({
   providedIn: 'root'
 })
@@ -80,11 +52,17 @@ export class ApiService {
     if (tags || query) {
       console.log(filters);
     }
-    return await resolveIn<Group[]>(demoGroups, 1000);
+    return await this.request<Group[]>({
+      resource: '/groups',
+      method: "GET",
+    });
   }
 
   async getGroupById(id: number) {
-    return await resolveIn(demoGroups.find(g => g.id === id), 1000);
+    return await this.request<Group>({
+      method: "GET",
+      resource: '/groups/' + id
+    });
   }
 
   async addGroupMember(memberId: number, groupId: number, contribution: number): Promise<void> {
@@ -92,7 +70,10 @@ export class ApiService {
   }
 
   async getAllTags() {
-    return await resolveIn(demoTags, 1000);
+    return await this.request<Tag[]>({
+      method: "GET",
+      resource: '/tags/index'
+    });
   }
 
   async createGroup(params: {
@@ -101,7 +82,51 @@ export class ApiService {
     description: string,
     private: boolean
   }) {
-    console.log(params);
-    return await resolveIn(1, 1000);
+    const {name, tags, description} = params;
+    return await this.request<{id: number}>({
+      resource: '/groups',
+      method: "POST",
+      body: {
+        name,
+        tags,
+        description
+      }
+    });
+  }
+
+  async register(params: {
+    username: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+  }) {
+    // tslint:disable-next-line:variable-name
+    const { username, password, firstName: first_name, lastName: last_name } = params;
+    return await this.request<{ id: number, token: string }>({
+      resource: '/users/new',
+      method: "POST",
+      body: {
+        username,
+        password,
+        first_name,
+        last_name
+      }
+    });
+  }
+
+  async login(params: {
+    username: string;
+    password: string;
+  }) {
+    // tslint:disable-next-line:variable-name
+    const { username, password } = params;
+    return await this.request<{ id: number, token: string }>({
+      resource: '/users/login',
+      method: "POST",
+      body: {
+        username,
+        password,
+      }
+    });
   }
 }

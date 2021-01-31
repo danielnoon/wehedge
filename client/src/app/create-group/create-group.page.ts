@@ -31,7 +31,7 @@ export class CreateGroupPage implements OnInit {
 
   async submit() {
     const { name, tags, description, priv} = this;
-    const id = await this.api.createGroup({
+    const { id } = await this.api.createGroup({
       name, tags, description,
       private: priv
     });
