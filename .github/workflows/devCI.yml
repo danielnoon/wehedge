@@ -27,6 +27,7 @@ jobs:
       run: |
         cd server
         bundle install --jobs 4 --retry 3
+    # no tests yet, add tests when they are written
     # - name: Run tests
     #   run: |
     #     cd server
