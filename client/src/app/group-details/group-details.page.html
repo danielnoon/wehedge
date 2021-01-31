@@ -5,7 +5,7 @@
     </div>
     <div class="navigation">
       <ion-buttons>
-        <ion-button class="button-back" routerLink="/groups" router-direction="back">
+        <ion-button class="button-back" (click)="goBack()" router-direction="back">
           <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
         </ion-button>
       </ion-buttons>

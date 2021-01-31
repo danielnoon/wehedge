@@ -3,6 +3,8 @@ import { Group } from "../../models/group";
 import { Subscription } from "rxjs";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ApiService } from "../api.service";
+import { NavController } from "@ionic/angular";
+import { Location } from "@angular/common";
 
 @Component({
   selector: 'app-join',
@@ -15,7 +17,13 @@ export class JoinPage implements OnInit, OnDestroy {
   contribAmount: number;
   private paramSub: Subscription;
 
-  constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private api: ApiService,
+    private router: Router,
+    private nav: NavController,
+    private location: Location
+  ) {}
 
   ngOnInit() {
     this.paramSub = this.route.params.subscribe(params => {
@@ -24,9 +32,14 @@ export class JoinPage implements OnInit, OnDestroy {
     });
   }
 
+  goBack() {
+    this.nav.setDirection("back", true, "back");
+    this.location.back();
+  }
+
   async submitContribution() {
     this.api.addGroupMember(100, this.id, this.contribAmount)
-      .then(() => this.router.navigate([`/groups/${this.id}`]));
+      .then(() => this.goBack());
   }
 
   ngOnDestroy() {

@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { GroupsPageRoutingModule } from './groups-routing.module';
+import { CreateGroupPageRoutingModule } from './create-group-routing.module';
 
-import { GroupsPage } from './groups.page';
+import { CreateGroupPage } from './create-group.page';
 import { ComponentsModule } from "../components/components.module";
 
 @NgModule({
@@ -14,10 +14,9 @@ import { ComponentsModule } from "../components/components.module";
     CommonModule,
     FormsModule,
     IonicModule,
-    ComponentsModule,
-    GroupsPageRoutingModule,
+    CreateGroupPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [GroupsPage]
+  declarations: [CreateGroupPage]
 })
-export class GroupsPageModule {}
+export class CreateGroupPageModule {}

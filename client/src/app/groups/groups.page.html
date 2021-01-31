@@ -2,8 +2,17 @@
   <div class="wrapper">
     <div class="header">
       <app-header></app-header>
-      <h1 class="heading">Find a Group</h1>
-      <ion-searchbar></ion-searchbar>
+      <div class="bar">
+        <ion-buttons class="back-buttons">
+          <ion-button routerLink="/home" router-direction="back">
+            <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <h1 class="heading">
+          Find a Group
+        </h1>
+      </div>
+      <ion-searchbar [(ngModel)]="rawSearch" (ionChange)="search()" debounce="650"></ion-searchbar>
     </div>
     <div class="content">
       <div class="loading" *ngIf="groups.length === 0">

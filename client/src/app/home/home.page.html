@@ -10,14 +10,14 @@
           <ion-card-content class="summary-content">
             <div class="number">
               <h2 class="smol-header">Net Gain (Loss)</h2>
-              <div class="big-number" [class.gain]="true">
-                +$1,250.93
+              <div class="big-number" [class.gain]="isGain()" [class.loss]="!isGain()">
+                {{ isGain() ? '+' : '' }}{{ netChange | currency }}
               </div>
             </div>
             <div class="number">
               <h2 class="smol-header">Funds</h2>
               <div class="big-number">
-                $2,322.00
+                {{ funds | currency }}
               </div>
             </div>
           </ion-card-content>
@@ -29,9 +29,20 @@
             <ion-icon name="enter-outline" slot="end"></ion-icon>
             Join Groups
           </ion-item>
-          <ion-item button>
+          <ion-item button routerLink="/groups/new">
             <ion-icon name="add-circle-outline" slot="end"></ion-icon>
             Create Group
+          </ion-item>
+        </ion-card>
+      </section>
+      <section>
+        <ion-card>
+          <ion-list-header>
+            Your Groups
+          </ion-list-header>
+          <ion-item *ngFor="let group of groups" button [routerLink]="'/groups/' + group.id">
+            {{ group.name }}
+            <app-sparkline slot="end"></app-sparkline>
           </ion-item>
         </ion-card>
       </section>
