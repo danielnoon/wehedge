@@ -11,7 +11,7 @@ default: &default
   username: postgres
   host: localhost
   # YOU NEED TO ADD A PASSWORD
-  password: 
+  password: thisismypostgrespassword!
 
 development:
   <<: *default
