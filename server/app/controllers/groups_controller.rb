@@ -54,9 +54,12 @@ class GroupsController < ApplicationController
         # can be nil
         g[:tags] = graw.tags.find_by_id(params[:tags]).as_json(only: %i[id name])
       end
-    else
-      g[:tags] = graw.tags.as_json(only: %i[id name])
     end
-    not (g[:tags].nil?)
+    if not g[:tags].nil?
+      g[:tags] = graw.tags.as_json(only: %i[id name])
+      true
+    else
+      false
+      end
     end
 end
